@@ -6,7 +6,7 @@ interface CardProps {
   isPopular: boolean;
 }
 
-const { title, price, description, features, isPopular } = Astro.props as CardProps;
+const { title, price, features, isPopular } = Astro.props as CardProps;
 ---
 
 <div class={`flex flex-col overflow-hidden border-2 rounded-md ${isPopular ? 'dark:border-blue' : 'dark:border-black'}`}>
