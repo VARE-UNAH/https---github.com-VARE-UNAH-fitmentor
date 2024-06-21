@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/Base.astro"
+import Card from '../components/precio.astro';
+
+const cards = [
+  {
+    title: "Entrenador Personal",
+    price: 19.99,
+    description: "Facturado Anualmente. Perfecto para entrenadores personales",
+    features: [
+      "Crear planes de nutrición personalizados.",
+      "Seguimiento de progreso del cliente.",
+      "Acceso a plantillas de entrenamientos.",
+      "Soporte vía chat en tiempo real."
+    ],
+    isPopular: true,
+  },
+  {
+    title: "Gimnasios",
+    price: 29.99,
+    description: "Facturado Anualmente. Ideal para gimnasios medianos",
+    features: [
+      "Gestión de múltiples entrenadores.",
+      "Control de membresías y pagos.",
+      "Reservas de clases y sesiones.",
+      "Reportes avanzados de rendimiento."
+    ],
+    isPopular: false,
+  },
+  {
+    title: "Corporaciones",
+    price: 49.99,
+    description: "Facturado Anualmente. Solución completa para grandes empresas",
+    features: [
+      "Integración con sistemas corporativos.",
+      "Múltiples ubicaciones y sedes.",
+      "Planes de bienestar empresarial.",
+      "Soporte premium y personalizado."
+    ],
+    isPopular: false,
+  },
+];
+---
+
+
+<BaseLayout title="Fitmentor">
+    
+    <section class="relative py-6 dark:bg-gray-100 dark:text-gray-800">
+        <div class="absolute inset-0 z-[1]">
+          <img class="h-full w-full object-cover object-center" src="https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg" alt="">
+          <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        <div class="relative z-[2] container p-4 mx-auto sm:p-10">
+          <div class="mb-12 space-y-4 text-center text-white">
+            <h1 class="text-4xl font-semibold leading-tight">Precios</h1>
+            <p class="px-4 sm:px-8 lg:px-24">Elige el plan que mejor se adapte a tus necesidades y comienza a transformar tu vida hoy mismo. 
+                Ofrecemos opciones flexibles y competitivas para entrenadores personales, gimnasios y corporaciones. 
+                ¡Aprovecha nuestras tarifas especiales y accede a un mundo de beneficios exclusivos!</p>
+            <div>
+              <button class="px-4 py-1 font-semibold border rounded-l-lg bg-blue border-hovb dark:text-gray-50">Mensual</button>
+              <button class="px-4 py-1 border rounded-r-lg border-hovb">Anual</button>
+            </div>
+          </div>
+          <div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-3 lg:max-w-full">
+            {cards.map((card) => (
+              <Card {...card} />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+</BaseLayout>
